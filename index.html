@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>JNSTech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f5594bc3b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="./sources/logo.png"/>
+</head>
+<body>
+   
+    <div id="progressbar"></div>
+    <div id="scrollCesta"></div>
+    <section>
+    <div class="alert alert-danger" role="alert" id="alert">
+        Web is in development!
+    </div>
+    <!---Navigace-Bar-->
+    <nav class="navigace">
+        <div class="navigace_container">
+            <a href="#home" id="navigace_logo">JNSTech</a>
+            <div class="navigace_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navigace_menu">
+                <li class="navigace_item">
+                    <a href="#home" class="navigace_links" id="home-stranka">Domů</a>
+                </li>
+                <li class="navigace_item">
+                    <a href="#onas" class="navigace_links" id="ome-stranka">O nás</a>
+                </li>
+                <li class="navigace_item">
+                    <a href="#sluzby" class="navigace_links" id="sluzby-stranka">Služby</a>
+                </li>
+                <li class="navigace_item">
+                    <a href="#kontakt" class="navigace_links" id="kontakt-stranka">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Home-Stránka-->
+    <div class="hlavni_page" id="home">
+        <div class="hlavni_container">
+            <h1 class="hlavni_heading"><span>JNSTech </span></h1>
+            <p class="hlavni_popis">Weby pro Vás!</p>
+            <button class="hlavni_button"><a href="#sluzby">Klikněte zde!</a></button>
+        </div>
+    </div>
+
+    <!--O-mě-->
+    <div class="main" id="onas">
+        <div class="main_container">
+            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="main_img-container">
+                <img src="./sources/mepng.png" >
+                    
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="1500" class="main_content">
+            <h1>JNSTech</h1>
+            <h2>Rychlost, spolehlivost, kvalita</h2>
+            <button class="hlavni_button"><a href="#kontakt">Kontakt</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!--Služby-->
+    <div class="sluzby" id="sluzby">
+        <div data-aos="zoom-out-up" class="karta">
+            <div class="content">
+                <h2>Tvorba webových stránek</h2>
+                <p>Vytvoříme Vám webové stránky pro Vás nebo Váš projekt!x<br>Podle vašich požadavků.</p>
+            </div>
+            <img src="./sources/tvorbawebu_image.png">
+        </div>
+        <div data-aos="zoom-out-up" class="karta">
+            <div class="content">
+                <h2>Oprava počítačů</h2>
+                <p>Opravíme Vám počítač a taky poradíme!</p>
+            </div>
+            <img src="./sources/opravapc_image.png">
+        </div>
+    </div>
+
+
+    <!--Kontakt-->
+
+    <div class="kontakt" id="kontakt">
+        <img src="./sources/parallax/bublina_ikona_mail_1.png" data-speed="1" class="layer" id="mail">
+        <img src="./sources/parallax/bublina_2.png" data-speed="0.4" class="layer">
+        <img src="./sources/parallax/bublina_ikona_telefon_3.png" data-speed="0.6" class="layer">
+        <img src="./sources/parallax/bublina_4.png" data-speed="0.8" class="layer">
+        <img src="./sources/parallax/bublina_5.png" data-speed="1" class="layer">
+        <img src="./sources/parallax/bublina_6.png" data-speed="1.2" class="layer">
+        <h3 data-speed="2" class="layer">Kontakt</h3>
+    </div>
+    <script>
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (window.innerWidth - e.pageX*speed)/100
+                const y = (window.innerHeight - e.pageY*speed)/100
+
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+
+            });
+        }
+    </script>
+    
+    <!--Scripty-->
+    <!--MobileMenu-JavaScript-->
+    <script src="./js/app.js"></script>    
+    <!--ProgressBar-JavaScript-->
+    <script src="./js/progressbar.js"></script>
+    <!--AOS-Library-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init(true);
+    </script>
+    <!--Parallax-->  
+     <script src="./js/parallax.js"></script>
+</body>
+</html>
+<!--Created by: Jan Haratek-->
